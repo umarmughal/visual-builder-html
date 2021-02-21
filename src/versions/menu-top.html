@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" data-kit-theme="default">
+<html lang="en" data-vb-theme="default">
 @@include('src/versions/head.html')
 
-<body class="cui__layout--cardsShadow cui__layout--grayBackground cui__menuTop--dark">
+<body class="vb__layout--cardsShadow vb__layout--grayBackground vb__menuTop--dark">
   <div class="initial__loading"></div>
-  <div class="cui__layout">
+  <div class="vb__layout">
     @@include('src/components/layout/support-chat/template.html')
     @@include('src/components/layout/sidebar/template.html')
     @@include('src/components/layout/menu-top/template.html')
-    <div class="cui__layout">
-      <div class="cui__layout__header">
+    <div class="vb__layout">
+      <div class="vb__layout__header">
         @@include('src/components/layout/topbar/template.html')
       </div>
-      <div class="cui__layout__content">
+      <div class="vb__layout__content">
         @@include('src/components/layout/breadcrumbs/template.html')
-        <div class="cui__utils__content">
+        <div class="vb__utils__content">
           <%= contents %>
         </div>
       </div>
-      <div class="cui__layout__footer">
+      <div class="vb__layout__footer">
         @@include('src/components/layout/footer/template.html')
       </div>
     </div>

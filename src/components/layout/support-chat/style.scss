@@ -3,8 +3,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 /* CHAT */
 
-.kit__chat--open {
-  .kit__chat__container {
+.vb__chat--open {
+  .vb__chat__container {
     z-index: 10;
     visibility: visible;
     opacity: 1;
@@ -12,7 +12,7 @@
   }
 }
 
-.kit {
+.vb {
   &__chat {
     position: fixed;
     z-index: 998;
@@ -97,8 +97,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit {
+[data-vb-theme='dark'] {
+  .vb {
     &__chat {
       &__container {
         background: $dark-gray-4;

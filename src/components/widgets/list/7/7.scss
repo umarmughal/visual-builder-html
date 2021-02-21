@@ -1,10 +1,10 @@
 @import 'src/components/mixins';
 
-.kit__l7 {
+.vb__l7 {
   &__list {
     position: relative;
 
-    .kit__l7__donut {
+    .vb__l7__donut {
       background-color: $white;
     }
 
@@ -28,7 +28,7 @@
     &:hover {
       color: inherit;
 
-      .kit__l7__itemAction {
+      .vb__l7__itemAction {
         span {
           &:first-child {
             opacity: 1;
@@ -152,8 +152,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit__l7 {
+[data-vb-theme='dark'] {
+  .vb__l7 {
     &__list {
       &:before {
         background: $dark-gray-4;

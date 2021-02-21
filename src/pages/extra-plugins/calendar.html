@@ -1,4 +1,4 @@
-<div class="kit__utils__heading">
+<div class="vb__utils__heading">
   <h5>
     <span class="mr-3">Calendar</span>
     <a href="http://fullcalendar.io/" target="_blank" class="btn btn-sm btn-light">
@@ -14,9 +14,9 @@
 </div>
 
 <script>
-  ;(function($) {
+  ; (function ($) {
     'use strict'
-    $(function() {
+    $(function () {
       $('.example-calendar-block').fullCalendar({
         //aspectRatio: 2,
         height: 800,
@@ -34,7 +34,7 @@
         defaultDate: '2016-05-12',
         editable: true,
         eventLimit: true, // allow "more" link when too many events
-        viewRender: function(view, element) {
+        viewRender: function (view, element) {
           if (!('ontouchstart' in document.documentElement) && jQuery().jScrollPane) {
             $('.fc-scroller').jScrollPane({
               autoReinitialise: true,
@@ -107,7 +107,7 @@
             className: 'fc-event-warning',
           },
         ],
-        eventClick: function(calEvent, jsEvent, view) {
+        eventClick: function (calEvent, jsEvent, view) {
           if (!$(this).hasClass('event-clicked')) {
             $('.fc-event').removeClass('event-clicked')
             $(this).addClass('event-clicked')

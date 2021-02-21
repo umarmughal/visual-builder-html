@@ -68,7 +68,7 @@
           <div class="card-body">
             <strong class="font-size-36 text-dark">246Gb</strong>
           </div>
-          <div class="cui-graph-card-chartistArea-1 chartist height-250"></div>
+          <div class="vb-graph-card-chartistArea-1 chartist height-250"></div>
         </div>
       </div>
       <div class="col-xl-12">
@@ -81,7 +81,7 @@
           <div class="card-body">
             <strong class="font-size-36 text-dark">52Gb</strong>
           </div>
-          <div class="cui-graph-card-chartistArea-2 chartist height-250"></div>
+          <div class="vb-graph-card-chartistArea-2 chartist height-250"></div>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
         <div class="row">
           <div class="col-xl-6">
             <div class="mb-3">
-              <table class="table cui-graph-card-table">
+              <table class="table vb-graph-card-table">
                 <thead>
                   <tr>
                     <th>Type</th>
@@ -132,19 +132,19 @@
           <div class="col-xl-6">
             <div class="h-100 d-flex flex-column justify-content-center align-items-center">
               <div class="mb-4">
-                <div class="cui-graph-card-donut-chartist-area-1 ct-chart-pie mb-3"></div>
+                <div class="vb-graph-card-donut-chartist-area-1 ct-chart-pie mb-3"></div>
               </div>
               <div class="text-center mb-4">
                 <span class="mr-2">
-                  <span class="kit__utils__donut kit__utils__donut--success"></span>
+                  <span class="vb__utils__donut vb__utils__donut--success"></span>
                   Ready
                 </span>
                 <span class="mr-2">
-                  <span class="kit__utils__donut kit__utils__donut--primary"></span>
+                  <span class="vb__utils__donut vb__utils__donut--primary"></span>
                   In Progress
                 </span>
                 <span class="mr-2">
-                  <span class="kit__utils__donut kit__utils__donut--danger"></span>
+                  <span class="vb__utils__donut vb__utils__donut--danger"></span>
                   Defected
                 </span>
               </div>
@@ -172,7 +172,7 @@
   ; (function ($) {
     'use strict'
     var chart = new Chartist.Pie(
-      '.cui-graph-card-donut-chartist-area-1',
+      '.vb-graph-card-donut-chartist-area-1',
       {
         labels: ['Ready', 'In Progress', 'Defected'],
         series: [90, 35, 18],
@@ -225,7 +225,7 @@
     })
 
     new Chartist.Line(
-      '.cui-graph-card-chartistArea-1',
+      '.vb-graph-card-chartistArea-1',
       {
         series: [[232, 111, 138, 144, 118, 210, 236]],
       },
@@ -257,7 +257,7 @@
     )
 
     new Chartist.Line(
-      '.cui-graph-card-chartistArea-2',
+      '.vb-graph-card-chartistArea-2',
       {
         series: [[3, 14, 37, 26, 48, 8, 63, 21, 24, 52]],
       },
@@ -288,7 +288,7 @@
       },
     )
     new Chartist.Line(
-      '.cui-graph-card-chartistArea-3',
+      '.vb-graph-card-chartistArea-3',
       {
         series: [[51, 8, 50, 45, 95, 90, 43, 13, 37, 52]],
       },

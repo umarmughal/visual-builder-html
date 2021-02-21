@@ -7,9 +7,9 @@
     /////////////////////////////////////////////////////////////////////////////////////////
     // custom scroll
 
-    if ($('.kit__customScroll').length) {
+    if ($('.vb__customScroll').length) {
       if (!/Mobi/.test(navigator.userAgent) && jQuery().perfectScrollbar) {
-        $('.kit__customScroll').perfectScrollbar({
+        $('.vb__customScroll').perfectScrollbar({
           theme: 'kit',
         })
       }

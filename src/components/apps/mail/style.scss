@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 /* MAIL APP */
 
-.kit {
+.vb {
   &__mail {
     display: flex;
     flex-direction: row;
@@ -67,8 +67,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit {
+[data-vb-theme='dark'] {
+  .vb {
     &__mail {
       &__category {
         &:hover,

@@ -1,9 +1,9 @@
 @import 'src/components/mixins';
 
 /////////////////////////////////////////////////////////////////////////////////////////
-/*  STYLES FOR "cui-topbar" MODULE */
+/*  STYLES FOR "vb-topbar" MODULE */
 
-.cui__topbar {
+.vb__topbar {
   padding: 0 rem(30);
   min-height: 64px;
   height: 64px;
@@ -97,7 +97,7 @@
       top: 2px;
 
       &:hover,
-      &.cui__topbar__favs__setIconActive {
+      &.vb__topbar__favs__setIconActive {
         opacity: 1;
         color: $primary;
       }
@@ -275,7 +275,7 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   /* SETTINGS */
   &--fixed {
-    .cui__layout__header {
+    .vb__layout__header {
       position: sticky;
       top: 0;
       z-index: 998;
@@ -283,22 +283,22 @@
   }
 
   @at-root {
-    [data-kit-theme='default'] &--gray {
-      .cui__topbar {
+    [data-vb-theme='default'] &--gray {
+      .vb__topbar {
         background: $gray-1 !important;
       }
     }
   }
-  // &--gray:not(.kit__dark) {
-  //   .cui__topbar {
+  // &--gray:not(.vb__dark) {
+  //   .vb__topbar {
   //     background: $gray-1 !important;
   //   }
   // }
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .cui__topbar {
+[data-vb-theme='dark'] {
+  .vb__topbar {
     background: $dark-gray-6;
     color: $dark-gray-1;
     border-bottom: 1px solid $dark-gray-4;

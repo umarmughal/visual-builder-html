@@ -4,14 +4,14 @@
       <div class="mr-5 flex-grow-1">
         <div class="text-uppercase text-dark font-weight-bold mb-3">Calendars</div>
         <div class="d-flex flex-wrap">
-          <label class="kit__utils__control kit__utils__control__checkbox kit__calendar__event">
+          <label class="vb__utils__control vb__utils__control__checkbox vb__calendar__event">
             <input type="checkbox" checked="checked" />
-            <span class="kit__utils__control__indicator"></span>
+            <span class="vb__utils__control__indicator"></span>
             Gmail
           </label>
-          <label class="kit__utils__control kit__utils__control__checkbox kit__calendar__event">
+          <label class="vb__utils__control vb__utils__control__checkbox vb__calendar__event">
             <input type="checkbox" />
-            <span class="kit__utils__control__indicator"></span>
+            <span class="vb__utils__control__indicator"></span>
             Birthdays
           </label>
         </div>
@@ -19,26 +19,26 @@
       <div class="flex-grow-1">
         <div class="text-uppercase text-dark font-weight-bold mb-3">Events</div>
         <div class="d-flex flex-wrap">
-          <div class="kit__calendar__event">
-            <div class="kit__utils__donut kit__utils__donut--danger"></div>
+          <div class="vb__calendar__event">
+            <div class="vb__utils__donut vb__utils__donut--danger"></div>
             Meeting
           </div>
-          <div class="kit__calendar__event">
-            <div class="kit__utils__donut kit__utils__donut--primary"></div>
+          <div class="vb__calendar__event">
+            <div class="vb__utils__donut vb__utils__donut--primary"></div>
             Holidays
           </div>
-          <div class="kit__calendar__event">
-            <div class="kit__utils__donut kit__utils__donut--orange"></div>
+          <div class="vb__calendar__event">
+            <div class="vb__utils__donut vb__utils__donut--orange"></div>
             Milestones
           </div>
-          <div class="kit__calendar__event">
-            <div class="kit__utils__donut kit__utils__donut--success"></div>
+          <div class="vb__calendar__event">
+            <div class="vb__utils__donut vb__utils__donut--success"></div>
             Conference
           </div>
         </div>
       </div>
     </div>
-    <div class="kit__calendar__appBlock"></div>
+    <div class="vb__calendar__appBlock"></div>
   </div>
 </div>
 
@@ -46,11 +46,11 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   // "CALENDAR APP" module scripts
 
-  ;(function($) {
+  ; (function ($) {
     'use strict'
-    $(function() {
+    $(function () {
       /////////////////////////////////////////////////////////////////////////////////////////
-      $('.kit__calendar__appBlock').fullCalendar({
+      $('.vb__calendar__appBlock').fullCalendar({
         height: 800,
         header: {
           left: 'prev, next',
@@ -66,7 +66,7 @@
         defaultDate: '2016-05-12',
         editable: true,
         eventLimit: true,
-        viewRender: function(view, element) {
+        viewRender: function (view, element) {
           if (!('ontouchstart' in document.documentElement) && jQuery().jScrollPane) {
             $('.fc-scroller').jScrollPane({
               autoReinitialise: true,
@@ -139,7 +139,7 @@
             className: 'fc-event-warning',
           },
         ],
-        eventClick: function(calEvent, jsEvent, view) {
+        eventClick: function (calEvent, jsEvent, view) {
           if (!$(this).hasClass('event-clicked')) {
             $('.fc-event').removeClass('event-clicked')
             $(this).addClass('event-clicked')

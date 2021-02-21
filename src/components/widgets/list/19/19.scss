@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__l19 {
+.vb__l19 {
   &__item {
     display: flex;
     flex-direction: row;
@@ -10,7 +10,7 @@
     &:last-child {
       margin-bottom: 0;
 
-      .kit__l19__itemSeparator {
+      .vb__l19__itemSeparator {
         &::before {
           bottom: 0;
         }
@@ -89,8 +89,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit__l19 {
+[data-vb-theme='dark'] {
+  .vb__l19 {
     &__itemSeparator {
       &:before {
         background: $dark-gray-4;

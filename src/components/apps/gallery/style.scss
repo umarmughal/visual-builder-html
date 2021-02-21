@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 /* GALLERY APP */
 
-.kit {
+.vb {
   &__gallery {
     &__control {
       margin-right: rem(20);
@@ -32,7 +32,7 @@
       margin-bottom: rem(15);
 
       &:hover {
-        .kit__gallery__itemControl {
+        .vb__gallery__itemControl {
           z-index: 10;
           opacity: 1;
         }

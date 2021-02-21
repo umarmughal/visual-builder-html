@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__t7 {
+.vb__t7 {
   &__textDivider {
     display: flex;
     flex-direction: row;
@@ -24,8 +24,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit__t7 {
+[data-vb-theme='dark'] {
+  .vb__t7 {
     &__textDivider {
       &::before,
       &::after {

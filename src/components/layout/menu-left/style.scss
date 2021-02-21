@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 /* MENU LEFT */
 
-.cui__menuLeft {
+.vb__menuLeft {
   background: $white;
   color: $text;
   transition: none;
@@ -32,14 +32,55 @@
     white-space: nowrap;
     width: 100%;
 
+    svg {
+      margin-right: rem(6);
+      height: rem(30);
+      width: rem(30);
+      path:nth-child(1) {
+        stroke: $primary;
+        fill: $primary;
+        stroke-width: 1px;
+        animation: logoAnimate 6s ease-in-out infinite;
+      }
+      path:nth-child(2) {
+        stroke: $primary;
+        fill: $primary;
+        stroke-width: 1px;
+        animation: logoAnimate 6s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+      path:nth-child(3) {
+        stroke: $primary;
+        fill: $primary;
+        stroke-width: 1px;
+        animation: logoAnimate 6s ease-in-out infinite;
+        animation-delay: 4s;
+      }
+
+      @keyframes logoAnimate {
+        0% {
+          stroke: $primary;
+          fill: $primary;
+        }
+        50% {
+          stroke: #1ad697;
+          fill: #1ad697;
+        }
+        100% {
+          stroke: $primary;
+          fill: $primary;
+        }
+      }
+    }
+
     &__container {
       height: 64px;
       display: flex;
       align-items: center;
-      padding: 0 rem(15) 0 rem(28);
+      padding: 0 rem(20) 0 rem(24);
     }
     &__name {
-      font-size: rem(20);
+      font-size: rem(18);
       font-weight: 700;
       color: $black;
       white-space: nowrap;
@@ -49,8 +90,8 @@
       display: block;
     }
     &__descr {
-      margin-left: rem(11);
-      padding-left: rem(11);
+      margin-left: rem(13);
+      padding-left: rem(13);
       height: rem(38);
       line-height: rem(38);
       border-left: 1px solid $gray-2;
@@ -109,7 +150,7 @@
     & & {
       padding: 0;
 
-      .cui__menuLeft__item__link {
+      .vb__menuLeft__item__link {
         padding-left: 30px;
       }
     }
@@ -145,7 +186,7 @@
         color: $primary !important;
         background: $gray-2;
 
-        .cui__menuLeft__item__icon {
+        .vb__menuLeft__item__icon {
           color: $primary;
         }
       }
@@ -174,7 +215,7 @@
         color: $white !important;
       }
 
-      .cui__menuLeft__item__icon {
+      .vb__menuLeft__item__icon {
         color: $white !important;
       }
     }
@@ -183,12 +224,12 @@
       color: $gray-4 !important;
       background: transparent !important;
 
-      .cui__menuLeft__item__link {
+      .vb__menuLeft__item__link {
         color: $gray-4 !important;
         background: transparent !important;
       }
 
-      .cui__menuLeft__item__icon {
+      .vb__menuLeft__item__icon {
         color: $gray-4;
       }
     }
@@ -198,12 +239,12 @@
     @include transition-middle();
     will-change: transform;
 
-    > .cui__menuLeft__navigation {
+    > .vb__menuLeft__navigation {
       display: none;
       padding-bottom: 4px;
     }
 
-    > .cui__menuLeft__item__link {
+    > .vb__menuLeft__item__link {
       &:after,
       &:before {
         content: '';
@@ -238,7 +279,7 @@
     &--toggled {
       background: $gray-2;
 
-      > .cui__menuLeft__item__link {
+      > .vb__menuLeft__item__link {
         &:after {
           transform: rotate(-45deg) translateX(-1px) translateY(-1px);
         }
@@ -261,7 +302,7 @@
     transition: transform 0.3s ease-in-out;
 
     &--mobileToggled {
-      .cui__menuLeft {
+      .vb__menuLeft {
         transform: translate(0, 0);
 
         &__backdrop {
@@ -338,14 +379,14 @@
 
   &--toggled {
     @media (min-width: $md-max-width) {
-      .cui__menuLeft {
+      .vb__menuLeft {
         flex: 0 0 80px;
         max-width: 80px;
         min-width: 80px;
         width: 80px;
 
         &:hover {
-          .cui__menuLeft {
+          .vb__menuLeft {
             &__outer {
               max-width: 256px;
               min-width: 256px;
@@ -362,7 +403,7 @@
         }
 
         &:not(:hover) {
-          .cui__menuLeft {
+          .vb__menuLeft {
             &__logo {
               &__name,
               &__descr {
@@ -413,7 +454,7 @@
             }
 
             &__submenu {
-              .cui__menuLeft__navigation {
+              .vb__menuLeft__navigation {
                 display: none !important;
               }
             }
@@ -430,7 +471,7 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   /* SETTINGS */
   &--unfixed {
-    .cui__menuLeft {
+    .vb__menuLeft {
       &__outer {
         position: relative;
       }
@@ -442,7 +483,7 @@
   }
 
   &--shadow {
-    .cui__menuLeft {
+    .vb__menuLeft {
       box-shadow: 0 0 100px -30px rgba(57, 55, 73, 0.3);
       z-index: 1;
     }
@@ -452,7 +493,7 @@
   /* GRAY & DARK THEME */
 
   &--gray {
-    .cui__menuLeft {
+    .vb__menuLeft {
       background: $gray-1;
 
       &__outer {
@@ -462,7 +503,7 @@
   }
 
   &--dark {
-    .cui__menuLeft {
+    .vb__menuLeft {
       color: $dark-gray-2;
       background: $dark-gray-6;
 
@@ -501,7 +542,7 @@
             background: $dark-gray-4 !important;
           }
 
-          &.cui__menuLeft__item--active {
+          &.vb__menuLeft__item--active {
             background: $primary !important;
             color: $white !important;
           }

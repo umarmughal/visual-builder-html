@@ -1,9 +1,9 @@
 <div class="text-dark font-size-18 font-weight-bold mb-1">Year Profit</div>
 <div class="text-gray-6 mb-2">Revenue by location and date</div>
-<div class="kit__c9__chartContainer d-flex flex-wrap align-items-center">
+<div class="vb__c9__chartContainer d-flex flex-wrap align-items-center">
   <div class="mr-3 mt-3 mb-3 position-relative">
-    <canvas class="kit__c9__chart" width="140" height="140"></canvas>
-    <div class="kit__c9__chartTooltip text-gray-5 font-size-28" id="chart9-tooltip"></div>
+    <canvas class="vb__c9__chart" width="140" height="140"></canvas>
+    <div class="vb__c9__chartTooltip text-gray-5 font-size-28" id="chart9-tooltip"></div>
   </div>
 </div>
 
@@ -11,11 +11,11 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   // "Chart Widget 9" module scripts
 
-  ;(function($) {
+  ; (function ($) {
     'use strict'
-    $(function() {
+    $(function () {
       /////////////////////////////////////////////////////////////////////////////////////////
-      const chart9 = new Chart(document.getElementsByClassName('kit__c9__chart'), {
+      const chart9 = new Chart(document.getElementsByClassName('vb__c9__chart'), {
         type: 'doughnut',
         data: {
           labels: ['Boston', 'Gravity Falls', 'New York'],
@@ -37,18 +37,18 @@
           legend: {
             display: false,
           },
-          legendCallback: function(chart) {
+          legendCallback: function (chart) {
             let text = []
             text.push('<div class="flex-shrink-0">')
             for (let i = 0; i < chart.data.labels.length; i++) {
               const label = chart.data.labels[i]
               const tabletBg = chart.data.datasets[0].backgroundColor[i]
               text.push(
-                '<div class="d-flex align-items-center flex-nowrap mt-2 mb-2"><div class="kit__c9__tablet mr-3" style="background-color:' +
-                  tabletBg +
-                  '"></div>' +
-                  label +
-                  '</div>',
+                '<div class="d-flex align-items-center flex-nowrap mt-2 mb-2"><div class="vb__c9__tablet mr-3" style="background-color:' +
+                tabletBg +
+                '"></div>' +
+                label +
+                '</div>',
               )
             }
             text.push('</div>')
@@ -57,7 +57,7 @@
           },
           tooltips: {
             enabled: false,
-            custom: function(tooltip) {
+            custom: function (tooltip) {
               const tooltipEl = document.getElementById('chart9-tooltip')
 
               // Hide if no tooltip
@@ -80,7 +80,7 @@
         },
       })
       const chart9Legend = chart9.generateLegend()
-      $('.kit__c9__chartContainer').append(chart9Legend[0])
+      $('.vb__c9__chartContainer').append(chart9Legend[0])
       /////////////////////////////////////////////////////////////////////////////////////////
     })
   })(jQuery)

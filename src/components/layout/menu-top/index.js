@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////
-// "cui-menu-right" module scripts
+// "vb-menu-right" module scripts
 
-;(function($) {
+; (function ($) {
   'use strict'
-  $(function() {
-    if ($('body').find('.cui__menuTop').length < 1) {
+  $(function () {
+    if ($('body').find('.vb__menuTop').length < 1) {
       return
     }
 
@@ -13,21 +13,21 @@
 
     var url = window.location.href
     var page = url.substr(url.lastIndexOf('/') + 1)
-    var currentItem = $('.cui__menuTop').find('a[href="' + page + '"]')
+    var currentItem = $('.vb__menuTop').find('a[href="' + page + '"]')
 
     console.log(page)
     currentItem
-      .addClass('cui__menuTop__item--active')
-      .parents('.cui__menuTop__submenu')
-      .addClass('cui__menuTop__submenu--toggled')
-      .find('> .cui__menuTop__navigation')
+      .addClass('vb__menuTop__item--active')
+      .parents('.vb__menuTop__submenu')
+      .addClass('vb__menuTop__submenu--toggled')
+      .find('> .vb__menuTop__navigation')
       .show()
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // mobile toggle
 
-    $('.cui__menuTop__backdrop, .cui__menuTop__mobileTrigger').on('click', function() {
-      $('body').toggleClass('cui__menuTop--mobileToggled')
+    $('.vb__menuTop__backdrop, .vb__menuTop__mobileTrigger').on('click', function () {
+      $('body').toggleClass('vb__menuTop--mobileToggled')
     })
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -54,29 +54,29 @@
         const x = unify(e).clientX
         const prev = touchStartPrev
         if (x - prev > 50 && !touchStartLocked) {
-          $('body').toggleClass('cui__menuTop--mobileToggled')
+          $('body').toggleClass('vb__menuTop--mobileToggled')
           touchStartLocked = true
         }
       },
       { passive: false },
     )
 
-    $('.cui__menuTop__submenu > .cui__menuTop__item__link').on('click', function() {
+    $('.vb__menuTop__submenu > .vb__menuTop__item__link').on('click', function () {
       if ($(window).innerWidth() < 768) {
-        var el = $(this).closest('.cui__menuTop__submenu'),
-          opened = $('.cui__menuTop__submenu--toggled')
+        var el = $(this).closest('.vb__menuTop__submenu'),
+          opened = $('.vb__menuTop__submenu--toggled')
 
         if (
-          !el.hasClass('cui__menuTop__submenu--toggled') &&
-          !el.parent().closest('.cui__menuTop__submenu').length
+          !el.hasClass('vb__menuTop__submenu--toggled') &&
+          !el.parent().closest('.vb__menuTop__submenu').length
         )
           opened
-            .removeClass('cui__menuTop__submenu--toggled')
-            .find('> .cui__menuTop__navigation')
+            .removeClass('vb__menuTop__submenu--toggled')
+            .find('> .vb__menuTop__navigation')
             .slideUp(200)
 
-        el.toggleClass('cui__menuTop__submenu--toggled')
-        var item = el.find('> .cui__menuTop__navigation')
+        el.toggleClass('vb__menuTop__submenu--toggled')
+        var item = el.find('> .vb__menuTop__navigation')
         if (item.is(':visible')) {
           item.slideUp(200)
         } else {
@@ -89,20 +89,20 @@
     // // set active menu item
     // var url = window.location.href
     // var page = url.substr(url.lastIndexOf('/') + 1)
-    // var currentItem = $('.cui-menu-top-list-root').find('a[href="' + page + '"]')
-    // currentItem.parent().toggleClass('cui-menu-top-item-active')
+    // var currentItem = $('.vb-menu-top-list-root').find('a[href="' + page + '"]')
+    // currentItem.parent().toggleClass('vb-menu-top-item-active')
     // /////////////////////////////////////////////////////////////////////////////////////////
     // // add backdrop
-    // $('.cui-menu-top').after('<div class="cui-menu-top-backdrop"><!-- --></div>')
+    // $('.vb-menu-top').after('<div class="vb-menu-top-backdrop"><!-- --></div>')
     // /////////////////////////////////////////////////////////////////////////////////////////
     // // menu logic
-    // $('.cui-menu-top-trigger-action').on('click', function() {
-    //   $('body').toggleClass('cui-menu-top-toggled')
+    // $('.vb-menu-top-trigger-action').on('click', function() {
+    //   $('body').toggleClass('vb-menu-top-toggled')
     // })
     // var isTabletView = false
     // function toggleMenu() {
     //   if (!isTabletView) {
-    //     $('body').addClass('cui-menu-top-toggled')
+    //     $('body').addClass('vb-menu-top-toggled')
     //   }
     // }
     // if ($(window).innerWidth() <= 992) {
@@ -117,25 +117,25 @@
     //     isTabletView = false
     //   }
     // })
-    // $('.cui-menu-top-handler, .cui-menu-top-backdrop').on('click', function() {
-    //   $('body').toggleClass('cui-menu-top-toggled-mobile')
+    // $('.vb-menu-top-handler, .vb-menu-top-backdrop').on('click', function() {
+    //   $('body').toggleClass('vb-menu-top-toggled-mobile')
     // })
     // /////////////////////////////////////////////////////////////////////////////////////////
     // // submenu
-    // $('.cui-menu-top-submenu > a').on('click', function() {
-    //   if ($('body').find('.cui-menu-top').length && $(window).innerWidth() < 768) {
+    // $('.vb-menu-top-submenu > a').on('click', function() {
+    //   if ($('body').find('.vb-menu-top').length && $(window).innerWidth() < 768) {
     //     var parent = $(this).parent(),
-    //       opened = $('.cui-menu-top-submenu-toggled')
+    //       opened = $('.vb-menu-top-submenu-toggled')
     //     if (
-    //       !parent.hasClass('cui-menu-top-submenu-toggled') &&
-    //       !parent.parent().closest('.cui-menu-top-submenu').length
+    //       !parent.hasClass('vb-menu-top-submenu-toggled') &&
+    //       !parent.parent().closest('.vb-menu-top-submenu').length
     //     )
     //       opened
-    //         .removeClass('cui-menu-top-submenu-toggled')
-    //         .find('> .cui-menu-top-list')
+    //         .removeClass('vb-menu-top-submenu-toggled')
+    //         .find('> .vb-menu-top-list')
     //         .slideUp(200)
-    //     parent.toggleClass('cui-menu-top-submenu-toggled')
-    //     var item = parent.find('> .cui-menu-top-list')
+    //     parent.toggleClass('vb-menu-top-submenu-toggled')
+    //     var item = parent.find('> .vb-menu-top-list')
     //     if (item.is(':visible')) {
     //       item.slideUp(200)
     //     } else {

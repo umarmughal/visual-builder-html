@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 /* BREADCRUMBS */
 
-.cui__breadcrumbs {
+.vb__breadcrumbs {
   padding: rem(20) rem(30) 0;
   font-size: rem(17);
 
@@ -23,8 +23,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .cui__breadcrumbs {
+[data-vb-theme='dark'] {
+  .vb__breadcrumbs {
     color: $dark-gray-1;
 
     &__current {

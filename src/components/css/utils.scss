@@ -4,7 +4,7 @@
 /*  "MEASUREMENTS" STYLES */
 
 // font size
-.kit__utils {
+.vb__utils {
 
   // layout
   &__content {
@@ -110,7 +110,7 @@
     flex-wrap: nowrap;
     align-items: center;
 
-    .kit__utils__avatar {
+    .vb__utils__avatar {
       border: 3px solid $white;
       flex-shrink: 0;
 
@@ -119,48 +119,48 @@
       }
 
       &--rounded {
-        ~ .kit__utils__avatarGroupAdd {
+        ~ .vb__utils__avatarGroupAdd {
           border-radius: 50%;
         }
       }
 
       &--size27 {
-        ~ .kit__utils__avatarGroupAdd {
+        ~ .vb__utils__avatarGroupAdd {
           width: rem(27);
           height: rem(27);
         }
       }
 
       &--size46 {
-        ~ .kit__utils__avatarGroupAdd {
+        ~ .vb__utils__avatarGroupAdd {
           width: rem(46);
           height: rem(46);
         }
       }
 
       &--size50 {
-        ~ .kit__utils__avatarGroupAdd {
+        ~ .vb__utils__avatarGroupAdd {
           width: rem(50);
           height: rem(50);
         }
       }
 
       &--size64 {
-        ~ .kit__utils__avatarGroupAdd {
+        ~ .vb__utils__avatarGroupAdd {
           width: rem(64);
           height: rem(64);
         }
       }
 
       &--size110 {
-        ~ .kit__utils__avatarGroupAdd {
+        ~ .vb__utils__avatarGroupAdd {
           width: rem(110);
           height: rem(110);
         }
       }
     }
 
-    .kit__utils__avatarGroupAdd {
+    .vb__utils__avatarGroupAdd {
       flex-shrink: 0;
       width: rem(40);
       height: rem(40);
@@ -215,33 +215,33 @@
       }
     }
 
-    &:hover input ~ .kit__utils__control__indicator,
-    input:focus ~ .kit__utils__control__indicator {
+    &:hover input ~ .vb__utils__control__indicator,
+    input:focus ~ .vb__utils__control__indicator {
       background: $gray-3;
     }
 
-    input:checked ~ .kit__utils__control__indicator {
+    input:checked ~ .vb__utils__control__indicator {
       background: $primary;
     }
 
-    &:hover input:not([disabled]):checked ~ .kit__utils__control__indicator,
-    .kit__utils__control input:checked:focus ~ .kit__utils__control__indicator {
+    &:hover input:not([disabled]):checked ~ .vb__utils__control__indicator,
+    .vb__utils__control input:checked:focus ~ .vb__utils__control__indicator {
       background: $primary;
       opacity: 0.8;
     }
 
-    input:disabled ~ .kit__utils__control__indicator {
+    input:disabled ~ .vb__utils__control__indicator {
       pointer-events: none;
       opacity: 0.6;
       background: $gray-2;
     }
 
-    input:checked ~ .kit__utils__control__indicator:after {
+    input:checked ~ .vb__utils__control__indicator:after {
       display: block;
     }
 
     &__checkbox {
-      .kit__utils__control__indicator:after {
+      .vb__utils__control__indicator:after {
         top: 3px;
         left: 6px;
         width: 6px;
@@ -251,13 +251,13 @@
         border-width: 0 2px 2px 0;
       }
 
-      input:disabled ~ .kit__utils__control__indicator:after {
+      input:disabled ~ .vb__utils__control__indicator:after {
         border-color: #7b7b7b;
       }
     }
 
     &__radio {
-      .kit__utils__control__indicator {
+      .vb__utils__control__indicator {
         border-radius: 50% !important;
 
         &:after {
@@ -270,7 +270,7 @@
         }
       }
 
-      input:disabled ~ .kit__utils__control__indicator:after {
+      input:disabled ~ .vb__utils__control__indicator:after {
         background: #7b7b7b;
       }
     }
@@ -482,8 +482,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit {
+[data-vb-theme='dark'] {
+  .vb {
     &__utils {
       &__heading {
         color: $dark-gray-1;

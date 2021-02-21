@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__g6 {
+.vb__g6 {
   position: relative;
   overflow: hidden;
   border-radius: 5px;
@@ -20,8 +20,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit__g6 {
+[data-vb-theme='dark'] {
+  .vb__g6 {
     &__footer {
       background: $dark-gray-4;
     }

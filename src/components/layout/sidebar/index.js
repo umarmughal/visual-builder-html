@@ -1,11 +1,11 @@
 /////////////////////////////////////////////////////////////////////////////////////////
-// "cui-menu-right" module scripts
-;(function($) {
+// "vb-menu-right" module scripts
+; (function ($) {
   'use strict'
-  $(function() {
+  $(function () {
     /////////////////////////////////////////////////////////////////////////////////////////
     // hide non top menu related settings
-    if ($('.cui__menuTop').length) {
+    if ($('.vb__menuTop').length) {
       $('.hideIfMenuTop').css({
         pointerEvents: 'none',
         opacity: 0.4,
@@ -14,26 +14,26 @@
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // toggle
-    $('.cui__sidebar__actionToggle').on('click', function() {
-      $('body').toggleClass('cui__sidebar--toggled')
+    $('.vb__sidebar__actionToggle').on('click', function () {
+      $('body').toggleClass('vb__sidebar--toggled')
     })
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // toggle theme
-    $('.cui__sidebar__actionToggleTheme').on('click', function() {
-      var theme = document.querySelector('html').getAttribute('data-kit-theme')
+    $('.vb__sidebar__actionToggleTheme').on('click', function () {
+      var theme = document.querySelector('html').getAttribute('data-vb-theme')
       if (theme === 'dark') {
-        document.querySelector('html').setAttribute('data-kit-theme', 'default')
+        document.querySelector('html').setAttribute('data-vb-theme', 'default')
         $('body').removeClass(
-          'kit__dark cui__menuLeft--gray cui__menuTop--gray cui__menuLeft--dark cui__menuTop--dark',
+          'vb__dark vb__menuLeft--gray vb__menuTop--gray vb__menuLeft--dark vb__menuTop--dark',
         )
       }
       if (theme === 'default') {
-        document.querySelector('html').setAttribute('data-kit-theme', 'dark')
+        document.querySelector('html').setAttribute('data-vb-theme', 'dark')
         $('body').removeClass(
-          'cui__menuLeft--gray cui__menuTop--gray cui__menuLeft--dark cui__menuTop--dark',
+          'vb__menuLeft--gray vb__menuTop--gray vb__menuLeft--dark vb__menuTop--dark',
         )
-        $('body').addClass('cui__menuLeft--dark cui__menuTop--dark')
+        $('body').addClass('vb__menuLeft--dark vb__menuTop--dark')
       }
     })
 
@@ -41,20 +41,15 @@
     // app name
     function updateName(name) {
       window.localStorage.setItem('appName', name)
-      var el = $('.cui__menuLeft').length
-        ? $('.cui__menuLeft__logo__name')
-        : $('.cui__menuTop__logo__name')
-      var descr = $('.cui__menuLeft').length
-        ? $('.cui__menuLeft__logo__descr')
-        : $('.cui__menuTop__logo__descr')
+      var el = $('.vb__menuLeft').length
+        ? $('.vb__menuLeft__logo__name')
+        : $('.vb__menuTop__logo__name')
+      var descr = $('.vb__menuLeft').length
+        ? $('.vb__menuLeft__logo__descr')
+        : $('.vb__menuTop__logo__descr')
       el.html(name)
-      if (name !== 'Clean UI Pro') {
-        descr.hide()
-      } else {
-        descr.show()
-      }
     }
-    $('#appName').on('keyup', function(e) {
+    $('#appName').on('keyup', function (e) {
       var value = e.target.value
       updateName(value)
     })
@@ -70,7 +65,7 @@
       function setColor(_color) {
         window.localStorage.setItem('kit.primary', _color)
         var tag = '<style />'
-        var css = `:root { --kit-color-primary: ${_color};}`
+        var css = `:root { --vb-color-primary: ${_color};}`
         $(tag)
           .attr('id', 'primaryColor')
           .text(css)
@@ -87,14 +82,14 @@
         .parent()
         .removeClass('reset')
     }
-    $('#colorPicker').on('change', function() {
+    $('#colorPicker').on('change', function () {
       var value = $(this).val()
       setPrimaryColor(value)
       $('#resetColor')
         .parent()
         .removeClass('reset')
     })
-    $('#resetColor').on('click', function() {
+    $('#resetColor').on('click', function () {
       window.localStorage.removeItem('kit.primary')
       $('#primaryColor').remove()
       $('#resetColor')
@@ -104,7 +99,7 @@
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // switch
-    $('.cui__sidebar__switch input').on('change', function() {
+    $('.vb__sidebar__switch input').on('change', function () {
       var el = $(this)
       var checked = el.is(':checked')
       var to = el.attr('to')
@@ -116,7 +111,7 @@
       }
     })
 
-    $('.cui__sidebar__switch input').each(function() {
+    $('.vb__sidebar__switch input').each(function () {
       var el = $(this)
       var to = el.attr('to')
       var setting = el.attr('setting')
@@ -127,45 +122,45 @@
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // colors
-    $('.cui__sidebar__select__item').on('click', function() {
+    $('.vb__sidebar__select__item').on('click', function () {
       var el = $(this)
       var parent = el.parent()
       var to = parent.attr('to')
       var setting = el.attr('setting')
       var items = parent.find('> div')
       var classList = ''
-      items.each(function() {
+      items.each(function () {
         var setting = $(this).attr('setting')
         if (setting) {
           classList = classList + ' ' + setting
         }
       })
-      items.removeClass('cui__sidebar__select__item--active')
-      el.addClass('cui__sidebar__select__item--active')
+      items.removeClass('vb__sidebar__select__item--active')
+      el.addClass('vb__sidebar__select__item--active')
       $(to).removeClass(classList)
       $(to).addClass(setting)
     })
 
-    $('.cui__sidebar__select__item').each(function() {
+    $('.vb__sidebar__select__item').each(function () {
       var el = $(this)
       var parent = el.parent()
       var to = parent.attr('to')
       var setting = el.attr('setting')
       var items = parent.find('> div')
       if ($(to).hasClass(setting)) {
-        items.removeClass('cui__sidebar__select__item--active')
-        el.addClass('cui__sidebar__select__item--active')
+        items.removeClass('vb__sidebar__select__item--active')
+        el.addClass('vb__sidebar__select__item--active')
       }
     })
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // type
-    $('.cui__sidebar__type__items input').on('change', function() {
+    $('.vb__sidebar__type__items input').on('change', function () {
       var el = $(this)
       var checked = el.is(':checked')
       var to = el.attr('to')
       var setting = el.attr('setting')
-      $('body').removeClass('cui__menu--compact cui__menu--flyout cui__menu--nomenu')
+      $('body').removeClass('vb__menu--compact vb__menu--flyout vb__menu--nomenu')
       if (checked) {
         $(to).addClass(setting)
       } else {
@@ -173,7 +168,7 @@
       }
     })
 
-    $('.cui__sidebar__type__items input').each(function() {
+    $('.vb__sidebar__type__items input').each(function () {
       var el = $(this)
       var to = el.attr('to')
       var setting = el.attr('setting')

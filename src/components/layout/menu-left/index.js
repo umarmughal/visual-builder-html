@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////
-// "cui-menu-right" module scripts
+// "vb-menu-right" module scripts
 
-;(function($) {
+; (function ($) {
   'use strict'
-  $(function() {
-    if ($('body').find('.cui__menuLeft').length < 1) {
+  $(function () {
+    if ($('body').find('.vb__menuLeft').length < 1) {
       return
     }
 
@@ -13,50 +13,50 @@
 
     var url = window.location.href
     var page = url.substr(url.lastIndexOf('/') + 1)
-    var currentItem = $('.cui__menuLeft').find('a[href="' + page + '"]')
+    var currentItem = $('.vb__menuLeft').find('a[href="' + page + '"]')
 
     currentItem
-      .addClass('cui__menuLeft__item--active')
-      .closest('.cui__menuLeft__submenu')
-      .addClass('cui__menuLeft__submenu--toggled')
-      .find('> .cui__menuLeft__navigation')
+      .addClass('vb__menuLeft__item--active')
+      .closest('.vb__menuLeft__submenu')
+      .addClass('vb__menuLeft__submenu--toggled')
+      .find('> .vb__menuLeft__navigation')
       .show()
 
-    /////////////////////////////////////////////////////////////////////////////////////////
-    // toggle on resize
-    ;(function() {
-      var isTabletView = false
-      function toggleMenu() {
-        if (!isTabletView) {
-          $('body').addClass('cui__menuLeft--toggled')
+      /////////////////////////////////////////////////////////////////////////////////////////
+      // toggle on resize
+      ; (function () {
+        var isTabletView = false
+        function toggleMenu() {
+          if (!isTabletView) {
+            $('body').addClass('vb__menuLeft--toggled')
+          }
         }
-      }
-      if ($(window).innerWidth() <= 992) {
-        toggleMenu()
-        isTabletView = true
-      }
-      $(window).on('resize', function() {
         if ($(window).innerWidth() <= 992) {
           toggleMenu()
           isTabletView = true
-        } else {
-          isTabletView = false
         }
-      })
-    })()
+        $(window).on('resize', function () {
+          if ($(window).innerWidth() <= 992) {
+            toggleMenu()
+            isTabletView = true
+          } else {
+            isTabletView = false
+          }
+        })
+      })()
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // toggle
 
-    $('.cui__menuLeft__trigger').on('click', function() {
-      $('body').toggleClass('cui__menuLeft--toggled')
+    $('.vb__menuLeft__trigger').on('click', function () {
+      $('body').toggleClass('vb__menuLeft--toggled')
     })
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // mobile toggle
 
-    $('.cui__menuLeft__backdrop, .cui__menuLeft__mobileTrigger').on('click', function() {
-      $('body').toggleClass('cui__menuLeft--mobileToggled')
+    $('.vb__menuLeft__backdrop, .vb__menuLeft__mobileTrigger').on('click', function () {
+      $('body').toggleClass('vb__menuLeft--mobileToggled')
     })
 
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -83,7 +83,7 @@
         const x = unify(e).clientX
         const prev = touchStartPrev
         if (x - prev > 50 && !touchStartLocked) {
-          $('body').toggleClass('cui__menuLeft--mobileToggled')
+          $('body').toggleClass('vb__menuLeft--mobileToggled')
           touchStartLocked = true
         }
       },
@@ -93,21 +93,21 @@
     /////////////////////////////////////////////////////////////////////////////////////////
     // submenu
 
-    $('.cui__menuLeft__submenu > .cui__menuLeft__item__link').on('click', function() {
-      var el = $(this).closest('.cui__menuLeft__submenu'),
-        opened = $('.cui__menuLeft__submenu--toggled')
+    $('.vb__menuLeft__submenu > .vb__menuLeft__item__link').on('click', function () {
+      var el = $(this).closest('.vb__menuLeft__submenu'),
+        opened = $('.vb__menuLeft__submenu--toggled')
 
       if (
-        !el.hasClass('cui__menuLeft__submenu--toggled') &&
-        !el.parent().closest('.cui__menuLeft__submenu').length
+        !el.hasClass('vb__menuLeft__submenu--toggled') &&
+        !el.parent().closest('.vb__menuLeft__submenu').length
       )
         opened
-          .removeClass('cui__menuLeft__submenu--toggled')
-          .find('> .cui__menuLeft__navigation')
+          .removeClass('vb__menuLeft__submenu--toggled')
+          .find('> .vb__menuLeft__navigation')
           .slideUp(200)
 
-      el.toggleClass('cui__menuLeft__submenu--toggled')
-      var item = el.find('> .cui__menuLeft__navigation')
+      el.toggleClass('vb__menuLeft__submenu--toggled')
+      var item = el.find('> .vb__menuLeft__navigation')
       if (item.is(':visible')) {
         item.slideUp(200)
       } else {

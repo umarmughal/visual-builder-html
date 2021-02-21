@@ -1,4 +1,4 @@
-<div class="kit__utils__heading">
+<div class="vb__utils__heading">
   <h5>
     <span class="mr-3">Chartist.js</span>
     <a href="https://gionkunz.github.io/chartist-js/" target="_blank" class="btn btn-sm btn-light">
@@ -98,36 +98,36 @@
 </div>
 
 <script>
-  ;(function($) {
+  ; (function ($) {
     'use strict'
-    $(function() {
+    $(function () {
       // CSS STYLING & ANIMATIONS
       var cssAnimationData = {
-          labels: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
-          series: [
-            [1, 2, 2.7, 0, 3, 5, 3, 4, 8, 10, 12, 7],
-            [0, 1.2, 2, 7, 2.5, 9, 5, 8, 9, 11, 14, 4],
-            [10, 9, 8, 6.5, 6.8, 6, 5.4, 5.3, 4.5, 4.4, 3, 2.8],
-          ],
-        },
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+        series: [
+          [1, 2, 2.7, 0, 3, 5, 3, 4, 8, 10, 12, 7],
+          [0, 1.2, 2, 7, 2.5, 9, 5, 8, 9, 11, 14, 4],
+          [10, 9, 8, 6.5, 6.8, 6, 5.4, 5.3, 4.5, 4.4, 3, 2.8],
+        ],
+      },
         cssAnimationResponsiveOptions = [
           [
             {
               axisX: {
-                labelInterpolationFnc: function(value, index) {
+                labelInterpolationFnc: function (value, index) {
                   return index % 2 !== 0 ? !1 : value
                 },
               },
@@ -146,29 +146,29 @@
 
       // SMIL ANIMATIONS
       var animationsChart = new Chartist.Line(
-          '.chart-smil-animations',
-          {
-            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-            series: [
-              [12, 9, 7, 8, 5, 4, 6, 2, 3, 3, 4, 6],
-              [4, 5, 3, 7, 3, 5, 5, 3, 4, 4, 5, 5],
-              [5, 3, 4, 5, 6, 3, 3, 4, 5, 6, 3, 4],
-              [3, 4, 5, 6, 7, 6, 4, 5, 6, 7, 6, 3],
-            ],
-          },
-          {
-            low: 0,
-            plugins: [Chartist.plugins.tooltip()],
-          },
-        ),
+        '.chart-smil-animations',
+        {
+          labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+          series: [
+            [12, 9, 7, 8, 5, 4, 6, 2, 3, 3, 4, 6],
+            [4, 5, 3, 7, 3, 5, 5, 3, 4, 4, 5, 5],
+            [5, 3, 4, 5, 6, 3, 3, 4, 5, 6, 3, 4],
+            [3, 4, 5, 6, 7, 6, 4, 5, 6, 7, 6, 3],
+          ],
+        },
+        {
+          low: 0,
+          plugins: [Chartist.plugins.tooltip()],
+        },
+      ),
         seq = 0,
         delays = 80,
         durations = 500
 
-      animationsChart.on('created', function() {
+      animationsChart.on('created', function () {
         seq = 0
       }),
-        animationsChart.on('draw', function(data) {
+        animationsChart.on('draw', function (data) {
           if ((seq++, 'line' === data.type))
             data.element.animate({
               opacity: {
@@ -224,12 +224,12 @@
             })
           else if ('grid' === data.type) {
             var pos1Animation = {
-                begin: seq * delays,
-                dur: durations,
-                from: data[data.axis.units.pos + '1'] - 30,
-                to: data[data.axis.units.pos + '1'],
-                easing: 'easeOutQuart',
-              },
+              begin: seq * delays,
+              dur: durations,
+              from: data[data.axis.units.pos + '1'] - 30,
+              to: data[data.axis.units.pos + '1'],
+              easing: 'easeOutQuart',
+            },
               pos2Animation = {
                 begin: seq * delays,
                 dur: durations,
@@ -238,19 +238,19 @@
                 easing: 'easeOutQuart',
               },
               ctAnimations = {}
-            ;(ctAnimations[data.axis.units.pos + '1'] = pos1Animation),
-              (ctAnimations[data.axis.units.pos + '2'] = pos2Animation),
-              (ctAnimations.opacity = {
-                begin: seq * delays,
-                dur: durations,
-                from: 0,
-                to: 1,
-                easing: 'easeOutQuart',
-              }),
-              data.element.animate(ctAnimations)
+              ; (ctAnimations[data.axis.units.pos + '1'] = pos1Animation),
+                (ctAnimations[data.axis.units.pos + '2'] = pos2Animation),
+                (ctAnimations.opacity = {
+                  begin: seq * delays,
+                  dur: durations,
+                  from: 0,
+                  to: 1,
+                  easing: 'easeOutQuart',
+                }),
+                data.element.animate(ctAnimations)
           }
         }),
-        animationsChart.on('created', function() {
+        animationsChart.on('created', function () {
           window.__exampleAnimateTimeout &&
             (clearTimeout(window.__exampleAnimateTimeout), (window.__exampleAnimateTimeout = null)),
             (window.__exampleAnimateTimeout = setTimeout(
@@ -260,16 +260,16 @@
         })
 
       // SCATTER
-      var ctScatterTimes = function(n) {
-          return Array.apply(null, new Array(n))
-        },
+      var ctScatterTimes = function (n) {
+        return Array.apply(null, new Array(n))
+      },
         ctScatterData = ctScatterTimes(52)
           .map(Math.random)
           .reduce(
-            function(data, rnd, index) {
+            function (data, rnd, index) {
               return (
                 data.labels.push(index + 1),
-                data.series.forEach(function(series) {
+                data.series.forEach(function (series) {
                   series.push(100 * Math.random())
                 }),
                 data
@@ -277,7 +277,7 @@
             },
             {
               labels: [],
-              series: ctScatterTimes(4).map(function() {
+              series: ctScatterTimes(4).map(function () {
                 return []
               }),
             },
@@ -285,7 +285,7 @@
         ctScatterOptions = {
           showLine: !1,
           axisX: {
-            labelInterpolationFnc: function(value, index) {
+            labelInterpolationFnc: function (value, index) {
               return index % 13 === 0 ? 'W' + value : null
             },
           },
@@ -296,7 +296,7 @@
             'screen and (min-width: 640px)',
             {
               axisX: {
-                labelInterpolationFnc: function(value, index) {
+                labelInterpolationFnc: function (value, index) {
                   return index % 4 === 0 ? 'W' + value : null
                 },
               },
@@ -370,14 +370,14 @@
 
       // BI POLAR BAR
       var biPolarData = {
-          labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10'],
-          series: [[1, 2, 4, 8, 6, -2, -1, -4, -6, -2]],
-        },
+        labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10'],
+        series: [[1, 2, 4, 8, 6, -2, -1, -4, -6, -2]],
+      },
         biPolarOptions = {
           high: 10,
           low: -10,
           axisX: {
-            labelInterpolationFnc: function(value, index) {
+            labelInterpolationFnc: function (value, index) {
               return index % 2 === 0 ? value : null
             },
           },
@@ -388,22 +388,22 @@
 
       // OVERLAPPING BAR
       var overlappingData = {
-          labels: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'Mai',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
-          series: [[5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8], [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]],
-        },
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'Mai',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+        series: [[5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8], [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]],
+      },
         overlappingOptions = {
           seriesBarDistance: 10,
           plugins: [Chartist.plugins.tooltip()],
@@ -414,7 +414,7 @@
             {
               seriesBarDistance: 5,
               axisX: {
-                labelInterpolationFnc: function(value) {
+                labelInterpolationFnc: function (value) {
                   return value[0]
                 },
               },
@@ -457,13 +457,13 @@
         {
           stackBars: !0,
           axisY: {
-            labelInterpolationFnc: function(value) {
+            labelInterpolationFnc: function (value) {
               return value / 1e3 + 'k'
             },
           },
           plugins: [Chartist.plugins.tooltip()],
         },
-      ).on('draw', function(data) {
+      ).on('draw', function (data) {
         'bar' === data.type &&
           data.element.attr({
             style: 'stroke-width: 30px',
@@ -472,25 +472,25 @@
 
       // SIMPLE PIE
       var simplePiedata = {
-          series: [5, 3, 4],
-        },
-        simplePieSum = function(a, b) {
+        series: [5, 3, 4],
+      },
+        simplePieSum = function (a, b) {
           return a + b
         }
 
       new Chartist.Pie('.chart-simple-pie', simplePiedata, {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
           return Math.round((value / simplePiedata.series.reduce(simplePieSum)) * 100) + '%'
         },
       })
 
       // PIE WITH LABELS
       var labelsPieData = {
-          labels: ['Bananas', 'Apples', 'Grapes'],
-          series: [20, 15, 40],
-        },
+        labels: ['Bananas', 'Apples', 'Grapes'],
+        series: [20, 15, 40],
+      },
         labelsPieOptions = {
-          labelInterpolationFnc: function(value) {
+          labelInterpolationFnc: function (value) {
             return value[0]
           },
         },
@@ -501,7 +501,7 @@
               chartPadding: 30,
               labelOffset: 100,
               labelDirection: 'explode',
-              labelInterpolationFnc: function(value) {
+              labelInterpolationFnc: function (value) {
                 return value
               },
             },

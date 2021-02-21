@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 /* MESSAGING APP */
 
-.kit {
+.vb {
   &__messaging {
     display: flex;
     flex-direction: row;
@@ -78,8 +78,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit {
+[data-vb-theme='dark'] {
+  .vb {
     &__messaging {
       &__dialogItem {
         &:hover,

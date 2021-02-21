@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__l6 {
+.vb__l6 {
   &__item {
     @include transition-middle;
     border-bottom: 1px solid $gray-2;
@@ -43,8 +43,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit__l6 {
+[data-vb-theme='dark'] {
+  .vb__l6 {
     &__item {
       border-bottom: 1px solid $dark-gray-4;
       &:hover {

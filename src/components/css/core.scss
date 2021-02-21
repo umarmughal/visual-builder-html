@@ -4,8 +4,8 @@
 /*  "CORE" STYLES */
 
 :root {
-  --kit-color-primary: #4b7cf3;
-  --kit-font-family: 'Mukta', sans-serif;
+  --vb-color-primary: #4b7cf3;
+  --vb-font-family: 'Mukta', sans-serif;
 }
 
 html {
@@ -83,7 +83,7 @@ svg {
 }
 
 // dark theme
-[data-kit-theme='dark'] {
+[data-vb-theme='dark'] {
   body {
     background: $dark-gray-5;
     color: $dark-gray-1;

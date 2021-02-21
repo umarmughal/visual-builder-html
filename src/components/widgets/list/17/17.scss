@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__l17 {
+.vb__l17 {
   &__item {
     display: flex;
     flex-direction: row;
@@ -8,14 +8,14 @@
     align-items: center;
     margin-bottom: rem(20);
 
-    .kit__utils__control {
+    .vb__utils__control {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
     }
 
-    .kit__utils__control__indicator {
+    .vb__utils__control__indicator {
       flex-shrink: 0;
     }
 

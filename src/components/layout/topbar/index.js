@@ -1,22 +1,22 @@
 /////////////////////////////////////////////////////////////////////////////////////////
-// "cui-topbar" module scripts
+// "vb-topbar" module scripts
 
-;(function($) {
+; (function ($) {
   'use strict'
-  $(function() {
-    $('.cui__topbar__actionsDropdown .dropdown-menu').on('click', function() {
-      $('.cui__topbar__actionsDropdown').on('hide.bs.dropdown', function(event) {
+  $(function () {
+    $('.vb__topbar__actionsDropdown .dropdown-menu').on('click', function () {
+      $('.vb__topbar__actionsDropdown').on('hide.bs.dropdown', function (event) {
         event.preventDefault() // stop hiding dropdown on click
 
-        $('.cui__topbar__actionsDropdown .nav-link').on('shown.bs.tab', function(e) {
-          $('.cui__topbar__actionsDropdown .dropdown-toggle').dropdown('update')
+        $('.vb__topbar__actionsDropdown .nav-link').on('shown.bs.tab', function (e) {
+          $('.vb__topbar__actionsDropdown .dropdown-toggle').dropdown('update')
         })
       })
     })
 
-    $(document, '.cui__topbar__actionsDropdown .dropdown-toggle').mouseup(function(e) {
-      var dropdown = $('.cui__topbar__actionsDropdown')
-      var dropdownMenu = $('.cui__topbar__actionsDropdownMenu')
+    $(document, '.vb__topbar__actionsDropdown .dropdown-toggle').mouseup(function (e) {
+      var dropdown = $('.vb__topbar__actionsDropdown')
+      var dropdownMenu = $('.vb__topbar__actionsDropdownMenu')
 
       if (
         !dropdownMenu.is(e.target) &&
@@ -31,9 +31,9 @@
     ///////////////////////////////////////////////////////////
     // livesearch scripts
 
-    var livesearch = $('.cui__topbar__livesearch')
-    var close = $('.cui__topbar__livesearch__close')
-    var visibleClass = 'cui__topbar__livesearch__visible'
+    var livesearch = $('.vb__topbar__livesearch')
+    var close = $('.vb__topbar__livesearch__close')
+    var visibleClass = 'vb__topbar__livesearch__visible'
     var input = $('#livesearch__input')
     var inputInner = $('#livesearch__input__inner')
 
@@ -46,9 +46,9 @@
         setHidden()
       }
     }
-    input.on('focus', function() {
+    input.on('focus', function () {
       livesearch.addClass(visibleClass)
-      setTimeout(function() {
+      setTimeout(function () {
         inputInner.focus()
       }, 200)
     })

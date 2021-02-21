@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.cui__auth {
+.vb__auth {
   &__boxContainer {
     padding: rem(50) rem(30);
   }
@@ -91,29 +91,29 @@
   /* SETTINGS */
 
   @at-root {
-    .cui__topbar--gray {
-      .cui__auth__topbar {
+    .vb__topbar--gray {
+      .vb__auth__topbar {
         background: $gray-1;
       }
     }
   }
 
   &--gray {
-    .cui__auth__authContainer {
+    .vb__auth__authContainer {
       background: $gray-1;
     }
   }
 
   &--img {
-    .cui__auth__authContainer {
+    .vb__auth__authContainer {
       background-image: url(/components/css/img/content/photos/7.jpg);
     }
   }
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .cui__auth {
+[data-vb-theme='dark'] {
+  .vb__auth {
     &__authContainer {
       background: transparent !important;
     }

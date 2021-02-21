@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__g14 {
+.vb__g14 {
   &__closeBtn {
     padding: 0;
     border: none;
@@ -23,12 +23,12 @@
     &--answer {
       flex-direction: row-reverse;
 
-      .kit__g14__messageAvatar {
+      .vb__g14__messageAvatar {
         margin-left: 0;
         margin-right: rem(15);
       }
 
-      .kit__g14__messageContent {
+      .vb__g14__messageContent {
         &::before {
           left: auto;
           right: 100%;
@@ -71,8 +71,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit__g14 {
+[data-vb-theme='dark'] {
+  .vb__g14 {
     &__messageContent {
       background-color: $dark-gray-5;
       &:before {
@@ -81,7 +81,7 @@
     }
     &__message {
       &--answer {
-        .kit__g14__messageContent {
+        .vb__g14__messageContent {
           &:before {
             border-right-color: $dark-gray-5;
           }

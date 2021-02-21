@@ -1,31 +1,26 @@
-<div class="kit__mail">
-  <div class="kit__mail__sidebar mr-4">
+<div class="vb__mail">
+  <div class="vb__mail__sidebar mr-4">
     <div class="position-relative mb-4">
-      <i class="kit__mail__searchIcon fe fe-search"></i>
-      <input class="kit__mail__searchInput form-control" type="text" placeholder="Search mail..." />
+      <i class="vb__mail__searchIcon fe fe-search"></i>
+      <input class="vb__mail__searchInput form-control" type="text" placeholder="Search mail..." />
     </div>
-    <div class="kit__customScroll kit__mail__categories d-flex flex-column">
-      <a
-        href="javascript: void(0);"
-        class="kit__mail__category kit__mail__category--current text-dark font-size-18 font-weight-bold"
-      >
+    <div class="vb__customScroll vb__mail__categories d-flex flex-column">
+      <a href="javascript: void(0);"
+        class="vb__mail__category vb__mail__category--current text-dark font-size-18 font-weight-bold">
         <span class="text-truncate">Inbox</span>
         <span>(2)</span>
       </a>
-      <a href="javascript: void(0);" class="kit__mail__category text-dark font-size-18">
+      <a href="javascript: void(0);" class="vb__mail__category text-dark font-size-18">
         <span class="text-truncate">Snoozed</span>
       </a>
-      <a href="javascript: void(0);" class="kit__mail__category text-dark font-size-18">
+      <a href="javascript: void(0);" class="vb__mail__category text-dark font-size-18">
         <span class="text-truncate">Sent</span>
       </a>
-      <a
-        href="javascript: void(0);"
-        class="kit__mail__category text-dark font-size-18 font-weight-bold"
-      >
+      <a href="javascript: void(0);" class="vb__mail__category text-dark font-size-18 font-weight-bold">
         <span class="text-truncate">Drafts</span>
         <span>(1)</span>
       </a>
-      <a href="javascript: void(0);" class="kit__mail__category text-dark font-size-18">
+      <a href="javascript: void(0);" class="vb__mail__category text-dark font-size-18">
         <span class="text-truncate">Span</span>
       </a>
     </div>
@@ -33,18 +28,13 @@
   <div class="card flex-fill">
     <div class="card-header card-header-flex flex-wrap">
       <div class="d-flex align-items-stretch mr-auto">
-        <ul
-          class="nav nav-tabs nav-tabs-line nav-tabs-line-bold nav-tabs-noborder nav-tabs-stretched"
-        >
+        <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold nav-tabs-noborder nav-tabs-stretched">
           <li class="nav-item">
-            <a class="nav-link active" href="javascript: void(0);" data-toggle="tab"
-              >Notifications</a
-            >
+            <a class="nav-link active" href="javascript: void(0);" data-toggle="tab">Notifications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript: void(0);" data-toggle="tab"
-              >Social <span class=" ml-2 badge badge-primary text-uppercase">4 new</span></a
-            >
+            <a class="nav-link" href="javascript: void(0);" data-toggle="tab">Social <span
+                class=" ml-2 badge badge-primary text-uppercase">4 new</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript: void(0);" data-toggle="tab">Promotions</a>
@@ -67,7 +57,7 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
-        <table class="table table-hover nowrap kit__mail__box">
+        <table class="table table-hover nowrap vb__mail__box">
           <thead>
             <tr>
               <th class="no-sort width-10"></th>
@@ -260,11 +250,11 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   // "MAIL APP" module scripts
 
-  ;(function($) {
+  ; (function ($) {
     'use strict'
-    $(function() {
+    $(function () {
       /////////////////////////////////////////////////////////////////////////////////////////
-      $('.kit__mail__box').DataTable({
+      $('.vb__mail__box').DataTable({
         responsive: false,
         order: [],
         columnDefs: [

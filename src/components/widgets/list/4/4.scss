@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__l4 {
+.vb__l4 {
   &__item {
     border-bottom: 1px solid $gray-2;
 
@@ -40,8 +40,8 @@
 }
 
 // dark theme
-[data-kit-theme='dark'] {
-  .kit__l4 {
+[data-vb-theme='dark'] {
+  .vb__l4 {
     &__item {
       border-bottom: 1px solid $dark-gray-4;
     }

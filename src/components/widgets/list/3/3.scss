@@ -1,6 +1,6 @@
 @import 'src/components/mixins';
 
-.kit__l3 {
+.vb__l3 {
   &__itemLink {
     display: flex;
     flex-direction: row;
@@ -10,7 +10,7 @@
     &:hover {
       color: inherit;
 
-      .kit__l3__itemAction {
+      .vb__l3__itemAction {
         span {
           &:first-child {
             opacity: 1;
